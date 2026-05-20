@@ -507,5 +507,32 @@ Login
         </div>
     </footer>
     <script src="templatemo-maison-doree.js"></script>
+    <script>
+
+let loginBtn =
+document.getElementById("loginBtn");
+
+if(localStorage.getItem("isLoggedIn")
+==="true"){
+
+loginBtn.innerText="Logout";
+
+loginBtn.href="#";
+
+loginBtn.onclick=function(e){
+
+e.preventDefault();
+
+localStorage.removeItem(
+"isLoggedIn"
+);
+
+location.reload();
+
+}
+
+}
+
+</script>
 </body>
 </html>
