@@ -6,7 +6,7 @@ document.getElementById("loginForm").addEventListener("submit", function(e){
     let password = document.getElementById("pwd").value;
 
     // username & password contoh
-    if(username === "admin" && password === "12345"){
+    if(username === "namira" && password === "123"){
 
         localStorage.setItem("isLoggedIn", "true");
 
