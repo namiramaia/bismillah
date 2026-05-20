@@ -190,3 +190,38 @@ button:hover {
         transform: translateY(5px);
     }
 }
+.register-form input,
+#registerForm input{
+
+display:block;
+width:80%;
+
+margin:15px auto;
+
+padding:12px;
+
+border:none;
+border-radius:8px;
+
+box-sizing:border-box;
+
+}
+
+#registerForm button{
+
+display:block;
+width:80%;
+
+margin:20px auto;
+
+padding:12px;
+
+}
+
+#registerForm{
+
+display:flex;
+flex-direction:column;
+align-items:center;
+
+}
