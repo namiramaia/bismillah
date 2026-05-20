@@ -190,18 +190,29 @@ button:hover {
         transform: translateY(5px);
     }
 }
-.register-form input,
+#registerForm .con{
+
+display:flex;
+flex-direction:column;
+align-items:center;
+
+}
+
+#registerForm h2{
+
+margin-bottom:30px;
+
+}
+
 #registerForm input{
 
-display:block;
 width:80%;
 
-margin:15px auto;
+margin:10px 0;
 
 padding:12px;
 
-border:none;
-border-radius:8px;
+display:block;
 
 box-sizing:border-box;
 
@@ -209,19 +220,16 @@ box-sizing:border-box;
 
 #registerForm button{
 
-display:block;
 width:80%;
 
-margin:20px auto;
+margin-top:20px;
 
 padding:12px;
 
 }
 
-#registerForm{
+#registerForm a{
 
-display:flex;
-flex-direction:column;
-align-items:center;
+margin-top:15px;
 
 }
