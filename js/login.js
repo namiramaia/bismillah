@@ -1,69 +1,52 @@
-const form = document.getElementById("loginForm");
+document
+.getElementById("loginForm")
+.addEventListener(
+"submit",
+function(e){
 
-form.addEventListener("submit", function(e){
+e.preventDefault();
 
-    e.preventDefault();
+let username=
+document.getElementById("username").value;
 
-    let username =
-    document.getElementById("username").value;
+let password=
+document.getElementById("pwd").value;
 
-    let password =
-    document.getElementById("pwd").value;
+let userData=
+localStorage.getItem(username);
 
-    // cek apakah akun sudah pernah dibuat
-    let savedUser =
-    localStorage.getItem("username");
+if(!userData){
 
-    let savedPass =
-    localStorage.getItem("password");
+alert(
+"Username tidak ditemukan"
+);
 
-    // kalau belum ada akun → simpan akun baru
-    if(savedUser===null){
+return;
 
-        localStorage.setItem(
-        "username",
-        username
-        );
+}
 
-        localStorage.setItem(
-        "password",
-        password
-        );
+userData=
+JSON.parse(userData);
 
-        localStorage.setItem(
-        "isLoggedIn",
-        "true"
-        );
+if(
+password===
+userData.password
+){
 
-        alert("Akun berhasil dibuat!");
+localStorage.setItem(
+"isLoggedIn",
+"true"
+);
 
-        window.location.href="../index.html";
+window.location.href=
+"../index.html";
 
-    }
+}else{
 
-    // kalau akun sudah ada → cek login
-    else if(
-        username===savedUser &&
-        password===savedPass
-    ){
+alert(
+"Password salah"
+);
 
-        localStorage.setItem(
-        "isLoggedIn",
-        "true"
-        );
-
-        alert("Login berhasil!");
-
-        window.location.href="../index.html";
-
-    }
-
-    else{
-
-        alert(
-        "Username atau password salah"
-        );
-
-    }
+}
 
 });
