@@ -719,6 +719,26 @@
   </a>
 </div>
 
+<!-- Youtube -->
+    <div class="card" style="margin-top:20px;">
+  <h3>Video YouTube</h3>
+
+  <iframe
+    id="ytvideo"
+    width="100%"
+    height="300"
+    style="border:0; border-radius:10px;"
+    src="https://www.youtube.com/embed/pzF0MBu1P6A?enablejsapi=1&mute=1&controls=1&rel=0"
+    allow="autoplay; encrypted-media"
+    allowfullscreen>
+  </iframe>
+
+  <br><br>
+
+  <a href="https://youtu.be/pzF0MBu1P6A" target="_blank">
+    ▶️ Buka di YouTube
+  </a>
+</div>
 
 <!-- Footer -->
 <footer class="site-footer">
@@ -823,7 +843,21 @@
 <script src="templatemo-maison-doree.js"></script>
 
 <script>
+let playerStarted = false;
 
+window.addEventListener("scroll", function () {
+  const video = document.getElementById("ytvideo");
+  const rect = video.getBoundingClientRect();
+
+  // kalau video masuk layar
+  if (rect.top < window.innerHeight && rect.bottom > 0) {
+    if (!playerStarted) {
+      video.src = video.src + "&autoplay=1";
+      playerStarted = true;
+    }
+  }
+});
+    
 let loginBtn = document.getElementById("loginBtn");
 
 if(localStorage.getItem("isLoggedIn") === "true"){
