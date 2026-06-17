@@ -1,21 +1,13 @@
-const form = document.getElementById("loginForm");
+function login() {
+  let name = document.getElementById("username").value;
 
-form.addEventListener("submit", function (e) {
-    e.preventDefault();
+  if (name === "") {
+    alert("Isi nama dulu!");
+    return;
+  }
 
-    const username = document.getElementById("username").value;
-    const password = document.getElementById("pwd").value;
+  document.getElementById("loginPage").style.display = "none";
+  document.getElementById("dashboard").style.display = "block";
 
-    // (simple login bebas, gak pakai database)
-    if (username.trim() === "" || password.trim() === "") {
-        alert("Isi username dan password dulu!");
-        return;
-    }
-
-    // SIMPAN DATA LOGIN
-    localStorage.setItem("isLoggedIn", "true");
-    localStorage.setItem("username", username);
-
-    // arahkan ke halaman utama
-    window.location.href = "../index.html";
-});
+  document.getElementById("welcomeText").innerText = `Hai ${name}!`;
+}
