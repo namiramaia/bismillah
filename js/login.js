@@ -1,52 +1,21 @@
-document
-.getElementById("loginForm")
-.addEventListener(
-"submit",
-function(e){
+const form = document.getElementById("loginForm");
 
-e.preventDefault();
+form.addEventListener("submit", function (e) {
+    e.preventDefault();
 
-let username=
-document.getElementById("username").value;
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("pwd").value;
 
-let password=
-document.getElementById("pwd").value;
+    // (simple login bebas, gak pakai database)
+    if (username.trim() === "" || password.trim() === "") {
+        alert("Isi username dan password dulu!");
+        return;
+    }
 
-let userData=
-localStorage.getItem(username);
+    // SIMPAN DATA LOGIN
+    localStorage.setItem("isLoggedIn", "true");
+    localStorage.setItem("username", username);
 
-if(!userData){
-
-alert(
-"Username tidak ditemukan"
-);
-
-return;
-
-}
-
-userData=
-JSON.parse(userData);
-
-if(
-password===
-userData.password
-){
-
-localStorage.setItem(
-"isLoggedIn",
-"true"
-);
-
-window.location.href=
-"../index.html";
-
-}else{
-
-alert(
-"Password salah"
-);
-
-}
-
+    // arahkan ke halaman utama
+    window.location.href = "../index.html";
 });
