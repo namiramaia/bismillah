@@ -427,3 +427,222 @@
     </div>
 
 </section>
+<!-- Hubungi Kami -->
+<section class="contact" id="contact">
+
+    <div class="container">
+
+        <div class="contact-grid">
+
+            <div class="contact-content">
+
+                <p class="text-label">
+                    Hubungi Kami
+                </p>
+
+                <h2 class="heading-display contact-title">
+                    Mari Berbagi Cerita
+                </h2>
+
+                <p class="text-body contact-text">
+                    Jika Anda memiliki pertanyaan, ingin memberikan
+                    saran, atau tertarik memesan ilustrasi digital,
+                    silakan hubungi melalui formulir berikut.
+                </p>
+
+            </div>
+
+
+
+            <div class="contact-form-wrapper">
+
+                <h3 class="form-title">
+                    Kirim Pesan
+                </h3>
+
+                <form id="appointmentForm">
+
+                    <div class="form-group">
+                        <label class="form-label">
+                            Nama
+                        </label>
+
+                        <input type="text"
+                               class="form-input"
+                               required>
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label class="form-label">
+                            Email
+                        </label>
+
+                        <input type="email"
+                               class="form-input"
+                               required>
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label class="form-label">
+                            Pesan
+                        </label>
+
+                        <textarea class="form-textarea"
+                        placeholder="Tulis pesan Anda di sini..."></textarea>
+
+                    </div>
+
+
+
+                    <button type="submit"
+                            class="form-submit">
+                        Kirim Pesan
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- Footer -->
+<footer class="site-footer">
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <div class="footer-brand">
+
+                <p class="footer-logo">
+                    Namira <span>Koleksi</span>
+                </p>
+
+                <p class="footer-tagline">
+                    Galeri ilustrasi digital yang menghadirkan
+                    berbagai karya visual dengan tema dan karakter
+                    yang beragam.
+                </p>
+
+            </div>
+
+
+
+            <div class="footer-column">
+
+                <h4 class="footer-column-title">
+                    Galeri
+                </h4>
+
+                <ul class="footer-links">
+
+                    <li><a href="#collections">Semua Karya</a></li>
+                    <li><a href="#">Ilustrasi Anime</a></li>
+                    <li><a href="#">Fantasi</a></li>
+                    <li><a href="#">Wallpaper</a></li>
+
+                </ul>
+
+            </div>
+
+
+
+            <div class="footer-column">
+
+                <h4 class="footer-column-title">
+                    Tentang
+                </h4>
+
+                <ul class="footer-links">
+
+                    <li><a href="#story">Tentang Kami</a></li>
+                    <li><a href="#craftsmanship">Proses Kreatif</a></li>
+                    <li><a href="#contact">Hubungi Kami</a></li>
+
+                </ul>
+
+            </div>
+
+
+
+            <div class="footer-column">
+
+                <h4 class="footer-column-title">
+                    Namira Koleksi
+                </h4>
+
+                <p>
+                    Tempat untuk berbagi ilustrasi digital,
+                    karakter orisinal, dan berbagai karya visual
+                    yang dibuat dengan penuh kreativitas.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="footer-bottom">
+
+            <p class="footer-copyright">
+                © 2026 Namira Koleksi
+            </p>
+
+            <div class="footer-social">
+
+                <a href="#">Instagram</a>
+                <a href="#">Pinterest</a>
+                <a href="#">TikTok</a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<script src="templatemo-maison-doree.js"></script>
+
+<script>
+
+let loginBtn = document.getElementById("loginBtn");
+
+if(localStorage.getItem("isLoggedIn") === "true"){
+
+    loginBtn.innerText = "Logout";
+
+    loginBtn.href = "#";
+
+    loginBtn.onclick = function(e){
+
+        e.preventDefault();
+
+        localStorage.removeItem("isLoggedIn");
+
+        location.reload();
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
